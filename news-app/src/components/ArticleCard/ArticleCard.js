@@ -6,10 +6,12 @@ export default function ArticleCard({ article }) {
     <div className="article-card">
       <div className="article-title">
         <h3>{article.title}</h3>
-        <img src={article.image} alt="article related." />
+        <p className="article-description">{article.description}</p>
+        <a className="article-url" href={article.url}>
+          Go to article
+        </a>
       </div>
-      <p>{article.description}</p>
-      <a href={article.url}>Go to article</a>
+      <img src={article.image} alt="article related." />
     </div>
   );
 }
