@@ -1,16 +1,18 @@
 import React from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
-import articles from "../../JSON/dummy-data";
+import data from "../../JSON/dummy-data";
 import "./SearchResults.css";
 
-const articlesArray = articles.articles;
+// const articles = articlesObject.articles;
 
-export default function SearchResults() {
+export default function SearchResults({ data, error }) {
   return (
     <div className="results-container">
-      {articlesArray.map((article, index) => {
-        return <ArticleCard key={index} article={article} />;
-      })}
+      {data &&
+        data.articles.map((article, index) => {
+          return <ArticleCard key={index} article={article} />;
+        })}
+      {error && <p>error</p>}
     </div>
   );
 }

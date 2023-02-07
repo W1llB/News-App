@@ -1,10 +1,19 @@
 import React from "react";
 
-export default function SearchBar() {
+export default function SearchBar({ setSearchTerm, getCustomNews }) {
+  function handleChange(e) {
+    setSearchTerm(e.target.value);
+  }
+
+  function handleClick() {
+    console.log("click");
+    getCustomNews();
+  }
+
   return (
-    <div>
-      <input placeholder="Search for the latest news" />
-      <button>Search</button>
+    <div className="search-bar-container">
+      <input placeholder="Search for the latest news" onChange={handleChange} />
+      <button onClick={handleClick}>Search</button>
     </div>
   );
 }
