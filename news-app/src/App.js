@@ -15,6 +15,7 @@ function App() {
     apiKey +
     "&lang=en" +
     "&max=10";
+  // state for fetch request url - changing this triggers a fetch request
   const [url, setUrl] = useState(urlOnLoad);
 
   //custom hook for fetching news from API
@@ -48,7 +49,9 @@ function App() {
 
   return (
     <div className="app-container">
-      <header className="app-header"></header>
+      <header className="app-header">
+        The World's News at your fingertips...
+      </header>
       <div className="body-container">
         <div className="search-container">
           <SearchBar
@@ -57,9 +60,6 @@ function App() {
             searchByCategory={searchByCategory}
           />
           <SearchResults data={data} error={error} />
-        </div>
-        <div className="readlater-container">
-          <ReadLater />
         </div>
       </div>
     </div>
