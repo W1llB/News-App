@@ -9,15 +9,14 @@ export default function useFetch(url) {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data, "setdata");
         setError(null);
       })
       .catch((err) => {
         setData(null);
         setError(err);
+        console.log(error);
       });
   }, [url]);
-  console.log(data, "fetchdata");
 
   return { data, error };
 }

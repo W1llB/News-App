@@ -27,7 +27,7 @@ export default function SearchBar({
       <form onSubmit={handleSubmit}>
         <div className="user-inputs-container">
           <div className="category-container">
-            <label for="searchCategory">
+            <label htmlFor="searchCategory">
               See the top headlines by category
             </label>
             <select
@@ -47,7 +47,7 @@ export default function SearchBar({
             </select>
           </div>
           <div className="search-input-container">
-            <label>Search by specific topic</label>
+            <label htmlFor="text search">Search by specific topic</label>
             <input
               placeholder="Search for the latest news"
               onChange={(e) => {
