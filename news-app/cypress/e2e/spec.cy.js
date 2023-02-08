@@ -35,15 +35,16 @@ describe("testing user flows", () => {
     cy.get(".results-container");
   });
   it("go to article link works", () => {
+    cy.visit("/");
     cy.get(":nth-child(1) > .article-content > .article-publisher").then(
       ($publisher) => {
         const publisher = $publisher.text();
-
+        const cleanPublisher = publisher.replace(" ", "");
         cy.get(
           ":nth-child(1) > .article-content > .article-footer > .article-url"
         )
           .should("have.attr", "href")
-          .and("include", publisher.toLowerCase());
+          .and("include", cleanPublisher.toLowerCase());
       }
     );
   });

@@ -9,11 +9,13 @@ export default function SearchBar({
   // const [category, setCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState(null);
 
+  //call higher level function to set new fetch url on form submit
   function handleSubmit(e) {
     e.preventDefault();
     getCustomNews(searchTerm);
   }
 
+  // set new url via higher level function call
   function handleCategoryChange(e) {
     searchByCategory(e.target.value);
   }

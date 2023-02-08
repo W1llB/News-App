@@ -5,6 +5,7 @@ import moment from "moment";
 export default function ArticleCard({ article }) {
   //calculate time since publishing
   const now = moment(article.publishedAt).fromNow();
+
   return (
     <div className="article-card">
       <div className="article-content">

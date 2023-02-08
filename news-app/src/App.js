@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar.js/SearchBar";
+import SearchBar from "./components/SearchBar/SearchBar";
 import SearchResults from "./components/SearchResults/SearchResults";
 import useFetch from "./hooks/useFetch/useFetch";
 
@@ -20,6 +20,7 @@ function App() {
   //custom hook for fetching news from API
   const { data, error, loading } = useFetch(url);
 
+  //Setting new fetch url when text search is made
   function getCustomNews(searchTerm) {
     let url =
       "https://gnews.io/api/v4/search?q=" +
@@ -31,6 +32,7 @@ function App() {
     setUrl(url);
   }
 
+  //Setting new fetch url when news category selected
   function searchByCategory(category) {
     let url =
       "https://gnews.io/api/v4/top-headlines?category=" +
@@ -42,6 +44,7 @@ function App() {
     setUrl(url);
   }
 
+  // reset to default headlines
   function resetSearchResults() {
     setUrl(urlOnLoad);
   }
