@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { useState } from "react";
-import ReadLater from "./components/ReadLater/ReadLater";
 import SearchBar from "./components/SearchBar.js/SearchBar";
 import SearchResults from "./components/SearchResults/SearchResults";
 import useFetch from "./hooks/useFetch/useFetch";
@@ -19,7 +18,7 @@ function App() {
   const [url, setUrl] = useState(urlOnLoad);
 
   //custom hook for fetching news from API
-  const { data, error } = useFetch(url);
+  const { data, error, loading } = useFetch(url);
 
   function getCustomNews(searchTerm) {
     let url =
@@ -59,7 +58,7 @@ function App() {
             resetSearchResults={resetSearchResults}
             searchByCategory={searchByCategory}
           />
-          <SearchResults data={data} error={error} />
+          <SearchResults data={data} error={error} loading={loading} />
         </div>
       </div>
     </div>
