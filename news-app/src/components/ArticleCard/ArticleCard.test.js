@@ -21,7 +21,7 @@ const article = {
 
 const now = moment(article.publishedAt).fromNow();
 
-describe("component props render", () => {
+describe("ArticleCard props render", () => {
   it("correct title, description, publisher rendered", () => {
     render(<ArticleCard article={article} />);
     const articleTitle = screen.getByRole("heading");

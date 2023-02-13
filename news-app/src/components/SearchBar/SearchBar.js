@@ -51,6 +51,7 @@ export default function SearchBar({
           <div className="search-input-container">
             <label htmlFor="text search">Search by specific topic</label>
             <input
+              name="searchTerm"
               placeholder="Search for the latest news"
               onChange={(e) => {
                 setSearchTerm(e.target.value);
