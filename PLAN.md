@@ -27,3 +27,16 @@ MLP:
     - Article card
     - Image resource of publisher icons/ logos to display for common news outlets
   - Reader later list - section to save your favourite articles
+
+Testing:
+
+- Component tests
+  - all components tested
+  - checking that any component input params are displayed correctly
+  - use of mock data for news feeds
+  - check if important elements are on the screen etc
+- Logic unit tests
+  - any logic in the component or helper/library functions is 100% fully tested
+  - stubbing API requests with mock data
+- Integration tests
+  - testing all components work together and are displayed/used correctly
